@@ -2,6 +2,12 @@
 
 Azure CLI can directly read bicep files. No need to complie to ARM templates required for Powershell modules.
 
+To validate, use Azure's what-if sub-command to verify deployment:
+
+```
+az deployment sub what-if --location <location> --template-file <path-to-bicep>
+```
+
 To Deploy, use the following command passing in the `location` parameter:
 
 ```
@@ -13,7 +19,7 @@ az deployment sub create --location <location> --template-file <path-to-bicep>
 1. Deploy Azure resources via Bicep.
     1. Create RG
     2. Deploy VM and it's dependencies
-        * SKU -- 
+        * SKU -- F2s_v2 (CPU-2/RAM-4/IOPS-3200) or F4s_v2 (4/8/6400)
         * Acclerated Networking
         * NSG -- Allow Port 27015 (Incoming)
         * Dynamic IP and DNS 
