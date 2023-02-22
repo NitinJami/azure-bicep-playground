@@ -101,3 +101,5 @@ resource publicIPAddress 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
     deleteOption: 'Delete'
   }
 }
+
+output nicID string = nic.id
